@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BankSystem.DAL\BankSystem.DAL.csproj" />
+    <ProjectReference Include="..\BankSystem.Models\BankSystem.Models.csproj" />
+  </ItemGroup>
+
 </Project>
