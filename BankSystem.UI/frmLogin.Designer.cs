@@ -47,7 +47,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(button1);
             Name = "frmLogin";
-            Text = "Form1";
+            Text = "e";
             Load += frmLogin_Load;
             ResumeLayout(false);
         }
