@@ -28,32 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            btnLogin = new Button();
+            txtUserID = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            txtPIN = new TextBox();
+            label3 = new Label();
             SuspendLayout();
             // 
-            // button1
+            // btnLogin
             // 
-            button1.Location = new Point(529, 132);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnLogin.Location = new Point(604, 458);
+            btnLogin.Margin = new Padding(6);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(176, 54);
+            btnLogin.TabIndex = 0;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
+            // 
+            // txtUserID
+            // 
+            txtUserID.Location = new Point(349, 168);
+            txtUserID.Multiline = true;
+            txtUserID.Name = "txtUserID";
+            txtUserID.Size = new Size(263, 47);
+            txtUserID.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(194, 171);
+            label1.Name = "label1";
+            label1.Size = new Size(100, 38);
+            label1.TabIndex = 2;
+            label1.Text = "UserID";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(194, 281);
+            label2.Name = "label2";
+            label2.Size = new Size(61, 38);
+            label2.TabIndex = 4;
+            label2.Text = "PIN";
+            // 
+            // txtPIN
+            // 
+            txtPIN.Location = new Point(349, 278);
+            txtPIN.Multiline = true;
+            txtPIN.Name = "txtPIN";
+            txtPIN.Size = new Size(263, 47);
+            txtPIN.TabIndex = 3;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(402, 43);
+            label3.Name = "label3";
+            label3.Size = new Size(143, 62);
+            label3.TabIndex = 5;
+            label3.Text = "Login";
             // 
             // frmLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            ClientSize = new Size(896, 638);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(txtPIN);
+            Controls.Add(label1);
+            Controls.Add(txtUserID);
+            Controls.Add(btnLogin);
+            Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Margin = new Padding(6);
             Name = "frmLogin";
-            Text = "Form1";
+            Text = "e";
             Load += frmLogin_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
+        private Button btnLogin;
+        private TextBox txtUserID;
+        private Label label1;
+        private Label label2;
+        private TextBox txtPIN;
+        private Label label3;
     }
 }
