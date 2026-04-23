@@ -1,0 +1,77 @@
+﻿namespace StaffManagement
+{
+    partial class ReportForm
+    {
+        private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Label lblTotalStaff;
+        private System.Windows.Forms.Label lblTotalSalary;
+        private System.Windows.Forms.Label lblAverageSalary;
+        private System.Windows.Forms.ListBox listBoxReport;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+                components.Dispose();
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            this.lblTotalStaff = new System.Windows.Forms.Label();
+            this.lblTotalSalary = new System.Windows.Forms.Label();
+            this.lblAverageSalary = new System.Windows.Forms.Label();
+            this.listBoxReport = new System.Windows.Forms.ListBox();
+            this.SuspendLayout();
+            // 
+            // lblTotalStaff
+            // 
+            this.lblTotalStaff.AutoSize = true;
+            this.lblTotalStaff.Location = new System.Drawing.Point(40, 40);
+            this.lblTotalStaff.Name = "lblTotalStaff";
+            this.lblTotalStaff.Size = new System.Drawing.Size(70, 16);
+            this.lblTotalStaff.TabIndex = 0;
+            this.lblTotalStaff.Text = "Total Staff:";
+            // 
+            // lblTotalSalary
+            // 
+            this.lblTotalSalary.AutoSize = true;
+            this.lblTotalSalary.Location = new System.Drawing.Point(40, 80);
+            this.lblTotalSalary.Name = "lblTotalSalary";
+            this.lblTotalSalary.Size = new System.Drawing.Size(83, 16);
+            this.lblTotalSalary.TabIndex = 1;
+            this.lblTotalSalary.Text = "Total Salary:";
+            // 
+            // lblAverageSalary
+            // 
+            this.lblAverageSalary.AutoSize = true;
+            this.lblAverageSalary.Location = new System.Drawing.Point(40, 120);
+            this.lblAverageSalary.Name = "lblAverageSalary";
+            this.lblAverageSalary.Size = new System.Drawing.Size(104, 16);
+            this.lblAverageSalary.TabIndex = 2;
+            this.lblAverageSalary.Text = "Average Salary:";
+            // 
+            // listBoxReport
+            // 
+            this.listBoxReport.FormattingEnabled = true;
+            this.listBoxReport.ItemHeight = 16;
+            this.listBoxReport.Location = new System.Drawing.Point(237, 24);
+            this.listBoxReport.Name = "listBoxReport";
+            this.listBoxReport.Size = new System.Drawing.Size(451, 212);
+            this.listBoxReport.TabIndex = 3;
+            // 
+            // ReportForm
+            // 
+            this.ClientSize = new System.Drawing.Size(700, 300);
+            this.Controls.Add(this.lblTotalStaff);
+            this.Controls.Add(this.lblTotalSalary);
+            this.Controls.Add(this.lblAverageSalary);
+            this.Controls.Add(this.listBoxReport);
+            this.Name = "ReportForm";
+            this.Text = "Staff Report";
+            this.Load += new System.EventHandler(this.ReportForm_Load_1);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+    }
+}
