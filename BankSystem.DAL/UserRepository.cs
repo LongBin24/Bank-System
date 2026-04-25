@@ -43,12 +43,13 @@ namespace BankSystem.DAL
         }
 
         //Update
-            public bool UpdateCustomer(User user)
+        public bool UpdateCustomer(User user)
         {
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
-                string sqlUpdate = " UPDATE Users SET FullName = @name, PIN = @pin, Phone = @phone WHERE UserID = @id";
+             
+                string sqlUpdate = "UPDATE Users SET FullName = @name, Phone = @phone WHERE UserID = @id";
                 using (var cmd = new NpgsqlCommand(sqlUpdate, conn))
                 {
                     cmd.Parameters.AddWithValue("name", user.FullName);

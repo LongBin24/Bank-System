@@ -39,23 +39,6 @@ namespace BankSystem.UI
             }
         }
 
-        private void FormatGrid()
-        {
-
-            if (dgvCustomers.Columns.Count > 0)
-            {
-                if (dgvCustomers.Columns.Contains("UserID")) dgvCustomers.Columns["UserID"].HeaderText = "លេខសម្គាល់";
-                if (dgvCustomers.Columns.Contains("FullName")) dgvCustomers.Columns["FullName"].HeaderText = "ឈ្មោះអតិថិជន";
-                if (dgvCustomers.Columns.Contains("Phone")) dgvCustomers.Columns["Phone"].HeaderText = "លេខទូរស័ព្ទ";
-                if (dgvCustomers.Columns.Contains("Balance"))
-                {
-                    dgvCustomers.Columns["Balance"].HeaderText = "សមតុល្យ";
-                    dgvCustomers.Columns["Balance"].DefaultCellStyle.Format = "N2";
-                    dgvCustomers.Columns["Balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                }
-                if (dgvCustomers.Columns.Contains("Currency")) dgvCustomers.Columns["Currency"].HeaderText = "ប្រភេទលុយ";
-            }
-        }
 
         private void dgvCustomers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -118,21 +101,24 @@ namespace BankSystem.UI
         {
             if (dgvCustomers.CurrentRow != null)
             {
-                User userToUpdate = new User
+
+                User selectedUser = new User
                 {
                     UserID = Convert.ToInt32(dgvCustomers.CurrentRow.Cells["UserID"].Value),
                     FullName = dgvCustomers.CurrentRow.Cells["FullName"].Value.ToString(),
                     Phone = dgvCustomers.CurrentRow.Cells["Phone"].Value.ToString()
                 };
-                if (_staffService.UpdateCustomer(userToUpdate))
+
+                frmEditCustomer editForm = new frmEditCustomer(selectedUser, _currentUser);
+
+                if (editForm.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("បានUpdateជោគជ័យ!");
-                    LoadCustomerData();
+                    LoadCustomerData(); 
                 }
-                else
-                {
-                    MessageBox.Show("មានបញ្ហាក្នុងការUpdateអតិថិជន!");
-                }
+            }
+            else
+            {
+                MessageBox.Show("សូមជ្រើសរើសអតិថិជនណាម្នាក់ក្នុងតារាងជាមុនសិន!");
             }
         }
 
@@ -168,6 +154,50 @@ namespace BankSystem.UI
                 g.DrawString(row.Cells["Phone"].Value.ToString(), fBody, Brushes.Black, 350, y);
                 g.DrawString(row.Cells["Balance"].Value.ToString(), fBody, Brushes.Black, 550, y);
                 y += 25;
+            }
+        }
+
+        private void FormatGrid()
+        {
+           
+            dgvCustomers.BackgroundColor = Color.White; 
+            dgvCustomers.BorderStyle = BorderStyle.None;
+            dgvCustomers.RowHeadersVisible = false;     
+            dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect; 
+            dgvCustomers.AllowUserToAddRows = false;   
+            dgvCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvCustomers.EnableHeadersVisualStyles = false; 
+            dgvCustomers.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvCustomers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185); 
+            dgvCustomers.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; 
+            dgvCustomers.ColumnHeadersDefaultCellStyle.Font = new Font("Khmer OS Battambang", 10, FontStyle.Bold);
+            dgvCustomers.ColumnHeadersHeight = 40; 
+
+
+            dgvCustomers.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); 
+            dgvCustomers.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvCustomers.DefaultCellStyle.Font = new Font("Khmer OS Battambang", 10);
+            dgvCustomers.RowTemplate.Height = 35;
+
+            dgvCustomers.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(235, 245, 251);
+
+            if (dgvCustomers.Columns.Count > 0)
+            {
+                if (dgvCustomers.Columns.Contains("UserID")) dgvCustomers.Columns["UserID"].HeaderText = "លេខសម្គាល់";
+                if (dgvCustomers.Columns.Contains("FullName")) dgvCustomers.Columns["FullName"].HeaderText = "ឈ្មោះអតិថិជន";
+                if (dgvCustomers.Columns.Contains("Phone")) dgvCustomers.Columns["Phone"].HeaderText = "លេខទូរស័ព្ទ";
+
+                if (dgvCustomers.Columns.Contains("Balance"))
+                {
+                    dgvCustomers.Columns["Balance"].HeaderText = "សមតុល្យ";
+                    dgvCustomers.Columns["Balance"].DefaultCellStyle.Format = "N2"; 
+                    dgvCustomers.Columns["Balance"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; 
+                    dgvCustomers.Columns["Balance"].DefaultCellStyle.ForeColor = Color.Green; 
+                }
+
+                if (dgvCustomers.Columns.Contains("Currency")) dgvCustomers.Columns["Currency"].HeaderText = "ប្រភេទលុយ";
+                if (dgvCustomers.Columns.Contains("AccountID")) dgvCustomers.Columns["AccountID"].HeaderText = "កុងលេខ";
             }
         }
     }
