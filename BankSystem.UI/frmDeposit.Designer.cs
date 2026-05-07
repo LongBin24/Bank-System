@@ -43,10 +43,12 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Khmer OS Battambang", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(287, 26);
+            lblTitle.Font = new Font("Khmer OS Battambang", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = SystemColors.HotTrack;
+            lblTitle.Location = new Point(260, 23);
+            lblTitle.Margin = new Padding(4, 0, 4, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(209, 41);
+            lblTitle.Size = new Size(315, 62);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "ដាក់ប្រាក់ចូលគណនី";
             // 
@@ -54,7 +56,8 @@
             // 
             lblCurrentBalance.AutoSize = true;
             lblCurrentBalance.Font = new Font("Khmer OS Battambang", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCurrentBalance.Location = new Point(33, 113);
+            lblCurrentBalance.Location = new Point(56, 115);
+            lblCurrentBalance.Margin = new Padding(4, 0, 4, 0);
             lblCurrentBalance.Name = "lblCurrentBalance";
             lblCurrentBalance.Size = new Size(236, 41);
             lblCurrentBalance.TabIndex = 1;
@@ -64,7 +67,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Khmer OS Battambang", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(115, 235);
+            label1.Location = new Point(116, 222);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(216, 41);
             label1.TabIndex = 2;
@@ -72,30 +76,39 @@
             // 
             // txtAmount
             // 
-            txtAmount.Location = new Point(337, 218);
+            txtAmount.Location = new Point(338, 205);
+            txtAmount.Margin = new Padding(4, 3, 4, 3);
             txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(329, 58);
+            txtAmount.Size = new Size(328, 58);
             txtAmount.TabIndex = 3;
             txtAmount.TextChanged += txtAmount_TextChanged;
             // 
             // btnConfirmDeposit
             // 
-            btnConfirmDeposit.Location = new Point(390, 377);
+            btnConfirmDeposit.BackColor = Color.LimeGreen;
+            btnConfirmDeposit.Font = new Font("Khmer OS Battambang", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnConfirmDeposit.ForeColor = SystemColors.ControlLightLight;
+            btnConfirmDeposit.Location = new Point(404, 326);
+            btnConfirmDeposit.Margin = new Padding(4, 3, 4, 3);
             btnConfirmDeposit.Name = "btnConfirmDeposit";
-            btnConfirmDeposit.Size = new Size(258, 59);
+            btnConfirmDeposit.Size = new Size(276, 58);
             btnConfirmDeposit.TabIndex = 4;
             btnConfirmDeposit.Text = "បញ្ជាក់ការដាក់ប្រាក់";
-            btnConfirmDeposit.UseVisualStyleBackColor = true;
+            btnConfirmDeposit.UseVisualStyleBackColor = false;
             btnConfirmDeposit.Click += btnConfirmDeposit_Click_1;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(181, 377);
+            btnCancel.BackColor = Color.Red;
+            btnCancel.Font = new Font("Khmer OS Battambang", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancel.ForeColor = SystemColors.ControlLightLight;
+            btnCancel.Location = new Point(104, 326);
+            btnCancel.Margin = new Padding(4, 3, 4, 3);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(134, 59);
+            btnCancel.Size = new Size(276, 58);
             btnCancel.TabIndex = 5;
             btnCancel.Text = "បោះបង់";
-            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
             // printPreviewDialog1
@@ -110,12 +123,16 @@
             // 
             // btnBack
             // 
+            btnBack.BackColor = Color.Red;
+            btnBack.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = SystemColors.ButtonHighlight;
             btnBack.Location = new Point(12, 26);
+            btnBack.Margin = new Padding(4, 3, 4, 3);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 52);
             btnBack.TabIndex = 6;
             btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
+            btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += button1_Click;
             // 
             // frmDeposit
@@ -132,7 +149,7 @@
             Controls.Add(lblTitle);
             Font = new Font("Khmer OS Battambang", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            Margin = new Padding(6, 7, 6, 7);
+            Margin = new Padding(6, 6, 6, 6);
             Name = "frmDeposit";
             Text = "frmDeposit";
             Load += frmDeposit_Load;

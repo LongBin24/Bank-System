@@ -68,5 +68,10 @@ namespace BankSystem.UI
             Navigation.SwitchForm(this, dashboard);
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

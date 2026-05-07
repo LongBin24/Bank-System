@@ -36,40 +36,51 @@
             // 
             // btnAddCustomer
             // 
-            btnAddCustomer.Location = new Point(66, 305);
+            btnAddCustomer.BackColor = SystemColors.MenuHighlight;
+            btnAddCustomer.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddCustomer.ForeColor = SystemColors.ButtonHighlight;
+            btnAddCustomer.Location = new Point(59, 294);
             btnAddCustomer.Name = "btnAddCustomer";
-            btnAddCustomer.Size = new Size(201, 51);
+            btnAddCustomer.Size = new Size(201, 55);
             btnAddCustomer.TabIndex = 0;
             btnAddCustomer.Text = "AddCustomer";
-            btnAddCustomer.UseVisualStyleBackColor = true;
+            btnAddCustomer.UseVisualStyleBackColor = false;
             btnAddCustomer.Click += btnAddCustomer_Click;
             // 
             // btnViewList
             // 
-            btnViewList.Location = new Point(305, 305);
+            btnViewList.BackColor = Color.Gold;
+            btnViewList.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnViewList.ForeColor = SystemColors.ButtonHighlight;
+            btnViewList.Location = new Point(281, 294);
             btnViewList.Name = "btnViewList";
-            btnViewList.Size = new Size(201, 51);
+            btnViewList.Size = new Size(201, 55);
             btnViewList.TabIndex = 1;
             btnViewList.Text = "ViewList";
-            btnViewList.UseVisualStyleBackColor = true;
+            btnViewList.UseVisualStyleBackColor = false;
             btnViewList.Click += btnViewList_Click;
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(541, 305);
+            btnLogout.BackColor = Color.Red;
+            btnLogout.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogout.ForeColor = SystemColors.ButtonHighlight;
+            btnLogout.Location = new Point(506, 294);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(201, 51);
+            btnLogout.Size = new Size(201, 55);
             btnLogout.TabIndex = 2;
             btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
             // lblWelcome
             // 
             lblWelcome.AutoSize = true;
+            lblWelcome.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWelcome.ForeColor = SystemColors.HotTrack;
             lblWelcome.Location = new Point(305, 98);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(132, 38);
+            lblWelcome.Size = new Size(197, 54);
             lblWelcome.TabIndex = 3;
             lblWelcome.Text = "Welcome";
             // 

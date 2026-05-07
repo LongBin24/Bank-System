@@ -56,11 +56,11 @@
             // 
             lblAccountID.AutoSize = true;
             lblAccountID.BackColor = Color.WhiteSmoke;
-            lblAccountID.Font = new Font("Khmer OS Niroth", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAccountID.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAccountID.ForeColor = Color.DarkBlue;
             lblAccountID.Location = new Point(29, 167);
             lblAccountID.Name = "lblAccountID";
-            lblAccountID.Size = new Size(102, 36);
+            lblAccountID.Size = new Size(96, 20);
             lblAccountID.TabIndex = 1;
             lblAccountID.Text = "AccountID";
             lblAccountID.TextAlign = ContentAlignment.MiddleCenter;
@@ -69,17 +69,18 @@
             // 
             lblBalance.AutoSize = true;
             lblBalance.BackColor = Color.WhiteSmoke;
-            lblBalance.Font = new Font("Khmer OS Niroth", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBalance.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBalance.ForeColor = Color.DarkBlue;
             lblBalance.Location = new Point(29, 61);
             lblBalance.Name = "lblBalance";
-            lblBalance.Size = new Size(180, 86);
+            lblBalance.Size = new Size(172, 46);
             lblBalance.TabIndex = 2;
             lblBalance.Text = "Balance";
             lblBalance.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnWithdraw
             // 
+            btnWithdraw.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWithdraw.Location = new Point(114, 334);
             btnWithdraw.Name = "btnWithdraw";
             btnWithdraw.Size = new Size(144, 49);
@@ -90,9 +91,10 @@
             // 
             // btnDeposit
             // 
-            btnDeposit.Location = new Point(286, 334);
+            btnDeposit.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDeposit.Location = new Point(276, 333);
             btnDeposit.Name = "btnDeposit";
-            btnDeposit.Size = new Size(134, 49);
+            btnDeposit.Size = new Size(144, 49);
             btnDeposit.TabIndex = 4;
             btnDeposit.Text = "Deposit";
             btnDeposit.UseVisualStyleBackColor = true;
@@ -100,9 +102,10 @@
             // 
             // btnTransfer
             // 
-            btnTransfer.Location = new Point(459, 333);
+            btnTransfer.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTransfer.Location = new Point(436, 331);
             btnTransfer.Name = "btnTransfer";
-            btnTransfer.Size = new Size(153, 51);
+            btnTransfer.Size = new Size(144, 51);
             btnTransfer.TabIndex = 5;
             btnTransfer.Text = "Transfer";
             btnTransfer.UseVisualStyleBackColor = true;
@@ -110,23 +113,26 @@
             // 
             // btnExchange
             // 
-            btnExchange.Location = new Point(617, 241);
+            btnExchange.BackColor = Color.Orange;
+            btnExchange.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExchange.ForeColor = SystemColors.ControlLightLight;
+            btnExchange.Location = new Point(600, 240);
             btnExchange.Name = "btnExchange";
-            btnExchange.Size = new Size(133, 54);
+            btnExchange.Size = new Size(150, 54);
             btnExchange.TabIndex = 6;
             btnExchange.Text = "Exchange";
-            btnExchange.UseVisualStyleBackColor = true;
+            btnExchange.UseVisualStyleBackColor = false;
             btnExchange.Click += btnExchange_Click;
             // 
             // btnHistory
             // 
             btnHistory.BackColor = Color.DodgerBlue;
             btnHistory.Cursor = Cursors.Hand;
-            btnHistory.Font = new Font("Khmer OS Battambang", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHistory.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHistory.ForeColor = SystemColors.Window;
-            btnHistory.Location = new Point(600, 144);
+            btnHistory.Location = new Point(600, 167);
             btnHistory.Name = "btnHistory";
-            btnHistory.Size = new Size(150, 80);
+            btnHistory.Size = new Size(150, 54);
             btnHistory.TabIndex = 7;
             btnHistory.Text = "History";
             btnHistory.UseVisualStyleBackColor = false;
@@ -134,12 +140,15 @@
             // 
             // btnLogout
             // 
+            btnLogout.BackColor = Color.Red;
+            btnLogout.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogout.ForeColor = SystemColors.ButtonHighlight;
             btnLogout.Location = new Point(637, 390);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(133, 51);
             btnLogout.TabIndex = 8;
             btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click_1;
             // 
             // lblCustomerName
@@ -148,7 +157,7 @@
             lblCustomerName.Font = new Font("Khmer OS Battambang", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCustomerName.Location = new Point(522, 61);
             lblCustomerName.Name = "lblCustomerName";
-            lblCustomerName.Size = new Size(178, 72);
+            lblCustomerName.Size = new Size(139, 72);
             lblCustomerName.TabIndex = 9;
             lblCustomerName.Text = "Name";
             // 

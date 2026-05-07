@@ -38,13 +38,16 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(604, 458);
+            btnLogin.BackColor = SystemColors.Highlight;
+            btnLogin.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = SystemColors.ButtonFace;
+            btnLogin.Location = new Point(349, 377);
             btnLogin.Margin = new Padding(6);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(176, 54);
+            btnLogin.Size = new Size(263, 53);
             btnLogin.TabIndex = 0;
             btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
             // txtUserID
@@ -58,24 +61,26 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(194, 171);
+            label1.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(212, 177);
             label1.Name = "label1";
-            label1.Size = new Size(100, 38);
+            label1.Size = new Size(102, 38);
             label1.TabIndex = 2;
             label1.Text = "UserID";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(194, 281);
+            label2.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(222, 260);
             label2.Name = "label2";
-            label2.Size = new Size(61, 38);
+            label2.Size = new Size(62, 38);
             label2.TabIndex = 4;
             label2.Text = "PIN";
             // 
             // txtPIN
             // 
-            txtPIN.Location = new Point(349, 278);
+            txtPIN.Location = new Point(349, 251);
             txtPIN.Multiline = true;
             txtPIN.Name = "txtPIN";
             txtPIN.Size = new Size(263, 47);
@@ -84,10 +89,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.MenuHighlight;
             label3.Location = new Point(402, 43);
             label3.Name = "label3";
-            label3.Size = new Size(143, 62);
+            label3.Size = new Size(150, 62);
             label3.TabIndex = 5;
             label3.Text = "Login";
             // 

@@ -37,48 +37,54 @@
             printDocument1 = new System.Drawing.Printing.PrintDocument();
             printPreviewDialog1 = new PrintPreviewDialog();
             btnBack = new Button();
+            label2 = new Label();
             SuspendLayout();
             // 
             // txtReceiverID
             // 
-            txtReceiverID.Location = new Point(300, 203);
+            txtReceiverID.Location = new Point(208, 175);
             txtReceiverID.Name = "txtReceiverID";
-            txtReceiverID.Size = new Size(280, 43);
+            txtReceiverID.Size = new Size(347, 43);
             txtReceiverID.TabIndex = 0;
             // 
             // txtAmount
             // 
-            txtAmount.Location = new Point(300, 287);
+            txtAmount.Location = new Point(208, 243);
             txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(280, 43);
+            txtAmount.Size = new Size(347, 43);
             txtAmount.TabIndex = 1;
             // 
             // ReceiverID
             // 
             ReceiverID.AutoSize = true;
-            ReceiverID.Location = new Point(146, 203);
+            ReceiverID.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold);
+            ReceiverID.Location = new Point(54, 175);
             ReceiverID.Name = "ReceiverID";
-            ReceiverID.Size = new Size(148, 38);
+            ReceiverID.Size = new Size(150, 38);
             ReceiverID.TabIndex = 2;
             ReceiverID.Text = "ReceiverID";
             // 
             // Amount
             // 
             Amount.AutoSize = true;
-            Amount.Location = new Point(146, 290);
+            Amount.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold);
+            Amount.Location = new Point(54, 246);
             Amount.Name = "Amount";
-            Amount.Size = new Size(116, 38);
+            Amount.Size = new Size(120, 38);
             Amount.TabIndex = 3;
             Amount.Text = "Amount";
             // 
             // btnTransfer
             // 
-            btnTransfer.Location = new Point(609, 447);
+            btnTransfer.BackColor = SystemColors.MenuHighlight;
+            btnTransfer.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTransfer.ForeColor = SystemColors.ButtonHighlight;
+            btnTransfer.Location = new Point(195, 334);
             btnTransfer.Name = "btnTransfer";
-            btnTransfer.Size = new Size(135, 53);
+            btnTransfer.Size = new Size(280, 53);
             btnTransfer.TabIndex = 4;
             btnTransfer.Text = "Transfer";
-            btnTransfer.UseVisualStyleBackColor = true;
+            btnTransfer.UseVisualStyleBackColor = false;
             btnTransfer.Click += btnTransfer_Click;
             // 
             // printDocument1
@@ -97,19 +103,34 @@
             // 
             // btnBack
             // 
+            btnBack.BackColor = Color.Red;
+            btnBack.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = SystemColors.ButtonHighlight;
             btnBack.Location = new Point(12, 12);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 49);
             btnBack.TabIndex = 5;
             btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
+            btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.HotTrack;
+            label2.Location = new Point(249, 79);
+            label2.Name = "label2";
+            label2.Size = new Size(176, 54);
+            label2.TabIndex = 12;
+            label2.Text = "Transfer";
             // 
             // frmTransfer
             // 
             AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(835, 655);
+            ClientSize = new Size(626, 655);
+            Controls.Add(label2);
             Controls.Add(btnBack);
             Controls.Add(btnTransfer);
             Controls.Add(Amount);
@@ -135,5 +156,6 @@
         private System.Drawing.Printing.PrintDocument printDocument1;
         private PrintPreviewDialog printPreviewDialog1;
         private Button btnBack;
+        private Label label2;
     }
 }

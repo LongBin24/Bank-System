@@ -32,6 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dgvHistory = new DataGridView();
             btnBack = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvHistory).BeginInit();
             SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvHistory.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvHistory.Location = new Point(3, 217);
+            dgvHistory.Location = new Point(12, 134);
             dgvHistory.Margin = new Padding(6);
             dgvHistory.Name = "dgvHistory";
             dgvHistory.ReadOnly = true;
@@ -64,19 +65,34 @@
             // 
             // btnBack
             // 
+            btnBack.BackColor = Color.Red;
+            btnBack.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = SystemColors.ButtonHighlight;
             btnBack.Location = new Point(12, 12);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 47);
             btnBack.TabIndex = 1;
             btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
+            btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.HotTrack;
+            label2.Location = new Point(335, 52);
+            label2.Name = "label2";
+            label2.Size = new Size(163, 54);
+            label2.TabIndex = 12;
+            label2.Text = "History";
             // 
             // frmHistory
             // 
             AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(837, 763);
+            Controls.Add(label2);
             Controls.Add(btnBack);
             Controls.Add(dgvHistory);
             Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -86,11 +102,13 @@
             Load += frmHistory_Load;
             ((System.ComponentModel.ISupportInitialize)dgvHistory).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private DataGridView dgvHistory;
         private Button btnBack;
+        private Label label2;
     }
 }

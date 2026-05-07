@@ -44,47 +44,56 @@
             txtAmount.Location = new Point(303, 156);
             txtAmount.Margin = new Padding(6);
             txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(231, 43);
+            txtAmount.Size = new Size(348, 43);
             txtAmount.TabIndex = 0;
             // 
             // btnWithdraw
             // 
-            btnWithdraw.Location = new Point(504, 268);
+            btnWithdraw.BackColor = Color.Orange;
+            btnWithdraw.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWithdraw.ForeColor = SystemColors.ControlLightLight;
+            btnWithdraw.Location = new Point(424, 268);
             btnWithdraw.Margin = new Padding(6);
             btnWithdraw.Name = "btnWithdraw";
-            btnWithdraw.Size = new Size(176, 54);
+            btnWithdraw.Size = new Size(246, 54);
             btnWithdraw.TabIndex = 1;
             btnWithdraw.Text = "Withdraw";
-            btnWithdraw.UseVisualStyleBackColor = true;
+            btnWithdraw.UseVisualStyleBackColor = false;
             btnWithdraw.Click += btnWithdraw_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(157, 159);
             label1.Name = "label1";
-            label1.Size = new Size(116, 38);
+            label1.Size = new Size(120, 38);
             label1.TabIndex = 2;
             label1.Text = "Amount";
             // 
             // lblCurrentBalance
             // 
             lblCurrentBalance.AutoSize = true;
-            lblCurrentBalance.Location = new Point(303, 36);
+            lblCurrentBalance.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCurrentBalance.ForeColor = SystemColors.Highlight;
+            lblCurrentBalance.Location = new Point(303, 52);
             lblCurrentBalance.Name = "lblCurrentBalance";
-            lblCurrentBalance.Size = new Size(205, 38);
+            lblCurrentBalance.Size = new Size(265, 46);
             lblCurrentBalance.TabIndex = 3;
             lblCurrentBalance.Text = "CurrentBalance";
             // 
             // btnConfirmWithdraw
             // 
-            btnConfirmWithdraw.Location = new Point(217, 268);
+            btnConfirmWithdraw.BackColor = SystemColors.MenuHighlight;
+            btnConfirmWithdraw.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnConfirmWithdraw.ForeColor = SystemColors.ControlLightLight;
+            btnConfirmWithdraw.Location = new Point(166, 268);
             btnConfirmWithdraw.Margin = new Padding(6);
             btnConfirmWithdraw.Name = "btnConfirmWithdraw";
             btnConfirmWithdraw.Size = new Size(246, 54);
             btnConfirmWithdraw.TabIndex = 4;
             btnConfirmWithdraw.Text = "ConfirmWithdraw";
-            btnConfirmWithdraw.UseVisualStyleBackColor = true;
+            btnConfirmWithdraw.UseVisualStyleBackColor = false;
             btnConfirmWithdraw.Click += btnConfirmWithdraw_Click;
             // 
             // printPreviewDialog1
@@ -99,12 +108,15 @@
             // 
             // btnBack
             // 
+            btnBack.BackColor = Color.Red;
+            btnBack.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = SystemColors.ControlLightLight;
             btnBack.Location = new Point(12, 12);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(133, 50);
             btnBack.TabIndex = 5;
             btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
+            btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += button1_Click;
             // 
             // frmWithdraw

@@ -41,6 +41,7 @@
             btnBack = new Button();
             printDocument1 = new System.Drawing.Printing.PrintDocument();
             printPreviewDialog1 = new PrintPreviewDialog();
+            label2 = new Label();
             SuspendLayout();
             // 
             // cbType
@@ -48,67 +49,76 @@
             cbType.DropDownStyle = ComboBoxStyle.DropDownList;
             cbType.FormattingEnabled = true;
             cbType.Items.AddRange(new object[] { "USD to KHR", "KHR to USD" });
-            cbType.Location = new Point(257, 259);
+            cbType.Location = new Point(245, 311);
             cbType.Name = "cbType";
-            cbType.Size = new Size(254, 45);
+            cbType.Size = new Size(283, 45);
             cbType.TabIndex = 0;
             cbType.SelectedIndexChanged += cbType_SelectedIndexChanged;
             // 
             // txtAmount
             // 
-            txtAmount.Location = new Point(257, 121);
+            txtAmount.Location = new Point(245, 173);
             txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(257, 43);
+            txtAmount.Size = new Size(283, 43);
             txtAmount.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(128, 121);
+            label1.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold);
+            label1.Location = new Point(116, 173);
             label1.Name = "label1";
-            label1.Size = new Size(116, 38);
+            label1.Size = new Size(120, 38);
             label1.TabIndex = 2;
             label1.Text = "Amount";
             // 
             // lblRete
             // 
             lblRete.AutoSize = true;
-            lblRete.Location = new Point(128, 194);
+            lblRete.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold);
+            lblRete.Location = new Point(116, 246);
             lblRete.Name = "lblRete";
-            lblRete.Size = new Size(72, 38);
+            lblRete.Size = new Size(73, 38);
             lblRete.TabIndex = 4;
             lblRete.Text = "Rete";
             // 
             // lblRate
             // 
-            lblRate.Location = new Point(254, 191);
+            lblRate.Location = new Point(242, 243);
             lblRate.Name = "lblRate";
             lblRate.Size = new Size(286, 43);
             lblRate.TabIndex = 3;
             // 
             // btnCalculate
             // 
-            btnCalculate.Location = new Point(355, 335);
+            btnCalculate.BackColor = SystemColors.HotTrack;
+            btnCalculate.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCalculate.ForeColor = SystemColors.ButtonHighlight;
+            btnCalculate.Location = new Point(245, 406);
             btnCalculate.Name = "btnCalculate";
             btnCalculate.Size = new Size(159, 58);
             btnCalculate.TabIndex = 5;
             btnCalculate.Text = "Calculate";
-            btnCalculate.UseVisualStyleBackColor = true;
+            btnCalculate.UseVisualStyleBackColor = false;
             btnCalculate.Click += btnCalculate_Click;
             // 
             // btnConfirm
             // 
-            btnConfirm.Location = new Point(128, 335);
+            btnConfirm.BackColor = Color.LimeGreen;
+            btnConfirm.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnConfirm.ForeColor = SystemColors.ButtonHighlight;
+            btnConfirm.Location = new Point(71, 406);
             btnConfirm.Name = "btnConfirm";
             btnConfirm.Size = new Size(159, 58);
             btnConfirm.TabIndex = 6;
             btnConfirm.Text = "Confirm";
-            btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.UseVisualStyleBackColor = false;
             btnConfirm.Click += btnConfirm_Click;
             // 
             // btnPrint
             // 
-            btnPrint.Location = new Point(628, 501);
+            btnPrint.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPrint.Location = new Point(421, 406);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(159, 58);
             btnPrint.TabIndex = 7;
@@ -119,20 +129,24 @@
             // lblResult
             // 
             lblResult.AutoSize = true;
-            lblResult.Location = new Point(128, 266);
+            lblResult.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold);
+            lblResult.Location = new Point(116, 318);
             lblResult.Name = "lblResult";
-            lblResult.Size = new Size(92, 38);
+            lblResult.Size = new Size(93, 38);
             lblResult.TabIndex = 8;
             lblResult.Text = "Result";
             // 
             // btnBack
             // 
+            btnBack.BackColor = Color.Red;
+            btnBack.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = SystemColors.ButtonHighlight;
             btnBack.Location = new Point(12, 12);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(109, 49);
             btnBack.TabIndex = 10;
             btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
+            btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
             // printDocument1
@@ -150,11 +164,23 @@
             printPreviewDialog1.Name = "printPreviewDialog1";
             printPreviewDialog1.Visible = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.HotTrack;
+            label2.Location = new Point(245, 71);
+            label2.Name = "label2";
+            label2.Size = new Size(201, 54);
+            label2.TabIndex = 11;
+            label2.Text = "Exchange";
+            // 
             // frmExchange
             // 
             AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(833, 721);
+            ClientSize = new Size(665, 721);
+            Controls.Add(label2);
             Controls.Add(btnBack);
             Controls.Add(lblResult);
             Controls.Add(btnPrint);
@@ -188,5 +214,6 @@
         private Button btnBack;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private PrintPreviewDialog printPreviewDialog1;
+        private Label label2;
     }
 }

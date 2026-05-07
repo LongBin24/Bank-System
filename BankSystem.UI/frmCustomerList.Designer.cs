@@ -68,50 +68,63 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(109, 89);
             label1.Name = "label1";
-            label1.Size = new Size(100, 38);
+            label1.Size = new Size(101, 38);
             label1.TabIndex = 2;
             label1.Text = "Search";
             // 
             // btnBack
             // 
+            btnBack.BackColor = Color.Red;
+            btnBack.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = SystemColors.ControlLightLight;
             btnBack.Location = new Point(12, 12);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(123, 49);
             btnBack.TabIndex = 3;
             btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
+            btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(239, 157);
+            btnDelete.BackColor = Color.Red;
+            btnDelete.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDelete.ForeColor = SystemColors.ControlLightLight;
+            btnDelete.Location = new Point(188, 158);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(130, 45);
+            btnDelete.Size = new Size(130, 54);
             btnDelete.TabIndex = 4;
             btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(375, 157);
+            btnAdd.BackColor = SystemColors.MenuHighlight;
+            btnAdd.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = SystemColors.ControlLightLight;
+            btnAdd.Location = new Point(334, 159);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(130, 45);
+            btnAdd.Size = new Size(130, 54);
             btnAdd.TabIndex = 5;
             btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(521, 157);
+            btnUpdate.BackColor = Color.Orange;
+            btnUpdate.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpdate.ForeColor = SystemColors.ControlLightLight;
+            btnUpdate.Location = new Point(479, 158);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(130, 45);
+            btnUpdate.Size = new Size(130, 54);
             btnUpdate.TabIndex = 6;
             btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
             // 
             // printDocument1
@@ -130,9 +143,10 @@
             // 
             // btnReport
             // 
-            btnReport.Location = new Point(666, 157);
+            btnReport.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReport.Location = new Point(625, 158);
             btnReport.Name = "btnReport";
-            btnReport.Size = new Size(130, 45);
+            btnReport.Size = new Size(130, 54);
             btnReport.TabIndex = 7;
             btnReport.Text = "Report";
             btnReport.UseVisualStyleBackColor = true;

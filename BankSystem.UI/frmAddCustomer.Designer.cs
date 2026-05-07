@@ -39,80 +39,88 @@
             btnSave = new Button();
             cbCurrency = new ComboBox();
             btnBack = new Button();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(176, 139);
+            label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+            label1.Location = new Point(176, 144);
             label1.Name = "label1";
-            label1.Size = new Size(91, 38);
+            label1.Size = new Size(79, 32);
             label1.TabIndex = 0;
             label1.Text = "Name";
             // 
             // txtName
             // 
-            txtName.Location = new Point(311, 136);
+            txtName.Location = new Point(286, 136);
             txtName.Name = "txtName";
-            txtName.Size = new Size(297, 43);
+            txtName.Size = new Size(322, 43);
             txtName.TabIndex = 1;
             // 
             // txtPIN
             // 
-            txtPIN.Location = new Point(311, 202);
+            txtPIN.Location = new Point(286, 202);
             txtPIN.Name = "txtPIN";
-            txtPIN.Size = new Size(297, 43);
+            txtPIN.Size = new Size(322, 43);
             txtPIN.TabIndex = 3;
             // 
             // PIN
             // 
             PIN.AutoSize = true;
-            PIN.Location = new Point(176, 205);
+            PIN.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+            PIN.Location = new Point(176, 210);
             PIN.Name = "PIN";
-            PIN.Size = new Size(61, 38);
+            PIN.Size = new Size(53, 32);
             PIN.TabIndex = 2;
             PIN.Text = "PIN";
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(311, 264);
+            txtPhone.Location = new Point(286, 264);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(297, 43);
+            txtPhone.Size = new Size(322, 43);
             txtPhone.TabIndex = 5;
             // 
             // Phone
             // 
             Phone.AutoSize = true;
-            Phone.Location = new Point(176, 267);
+            Phone.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+            Phone.Location = new Point(176, 272);
             Phone.Name = "Phone";
-            Phone.Size = new Size(96, 38);
+            Phone.Size = new Size(83, 32);
             Phone.TabIndex = 4;
             Phone.Text = "Phone";
             // 
             // txtDeposit
             // 
-            txtDeposit.Location = new Point(311, 325);
+            txtDeposit.Location = new Point(286, 325);
             txtDeposit.Name = "txtDeposit";
-            txtDeposit.Size = new Size(297, 43);
+            txtDeposit.Size = new Size(322, 43);
             txtDeposit.TabIndex = 7;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(176, 328);
+            label4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+            label4.Location = new Point(176, 333);
             label4.Name = "label4";
-            label4.Size = new Size(112, 38);
+            label4.Size = new Size(97, 32);
             label4.TabIndex = 6;
             label4.Text = "Deposit";
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(654, 459);
+            btnSave.BackColor = Color.Green;
+            btnSave.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSave.ForeColor = SystemColors.ButtonFace;
+            btnSave.Location = new Point(402, 457);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(125, 48);
+            btnSave.Size = new Size(194, 48);
             btnSave.TabIndex = 8;
             btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // cbCurrency
@@ -126,19 +134,35 @@
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(26, 36);
+            btnBack.BackColor = Color.Red;
+            btnBack.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = SystemColors.ButtonFace;
+            btnBack.Location = new Point(184, 458);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(92, 47);
+            btnBack.Size = new Size(194, 47);
             btnBack.TabIndex = 10;
             btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
+            btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.HotTrack;
+            label2.Location = new Point(286, 59);
+            label2.Name = "label2";
+            label2.Size = new Size(249, 46);
+            label2.TabIndex = 11;
+            label2.Text = "Add Customer";
+            label2.Click += label2_Click;
             // 
             // frmAddCustomer
             // 
             AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(835, 722);
+            Controls.Add(label2);
             Controls.Add(btnBack);
             Controls.Add(cbCurrency);
             Controls.Add(btnSave);
@@ -172,5 +196,6 @@
         private Button btnSave;
         private ComboBox cbCurrency;
         private Button btnBack;
+        private Label label2;
     }
 }
