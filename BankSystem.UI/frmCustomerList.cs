@@ -10,10 +10,12 @@ namespace BankSystem.UI
     {
         private StaffService _staffService = new StaffService();
         private BankSystem.Models.User _currentUser;
-        public frmCustomerList(BankSystem.Models.User user)
+        string role;
+        public frmCustomerList(BankSystem.Models.User user, string _role)
         {
             InitializeComponent();
             _currentUser = user;
+            role = _role;
         }
 
         private void frmCustomerList_Load(object sender, EventArgs e)
@@ -25,7 +27,7 @@ namespace BankSystem.UI
         {
             try
             {
-                DataTable dt = _staffService.GetCustomerList();
+                DataTable dt = _staffService.GetCustomerList(role);
 
                 if (dt != null)
                 {
@@ -38,7 +40,6 @@ namespace BankSystem.UI
                 MessageBox.Show("មិនអាចទាញយកទិន្នន័យបានទេ៖ " + ex.Message);
             }
         }
-
 
         private void dgvCustomers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -93,8 +94,16 @@ namespace BankSystem.UI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAddCustomer addfrm = new frmAddCustomer(_currentUser);
-            Navigation.SwitchForm(this, addfrm);
+            if (role == "Customer")
+            {
+                frmAddCustomer addfrm = new frmAddCustomer(_currentUser);
+                Navigation.SwitchForm(this, addfrm);
+            }
+            else if (role == "Staff")
+            {
+                frmAddStaff addfrm = new frmAddStaff(_currentUser);
+                Navigation.SwitchForm(this, addfrm);
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -139,22 +148,46 @@ namespace BankSystem.UI
             g.DrawString("របាយការណ៍បញ្ជីអតិថិជនទាំងអស់", fTitle, Brushes.Black, 200, y);
             y += 60;
 
-            g.DrawString("ID", fHeader, Brushes.Black, 50, y);
-            g.DrawString("ឈ្មោះអតិថិជន", fHeader, Brushes.Black, 100, y);
-            g.DrawString("លេខទូរស័ព្ទ", fHeader, Brushes.Black, 350, y);
-            g.DrawString("សមតុល្យ", fHeader, Brushes.Black, 550, y);
-            y += 30;
-            g.DrawLine(Pens.Black, 50, y, 750, y);
-            y += 10;
-
-            foreach (DataGridViewRow row in dgvCustomers.Rows)
+            if (role == "Customer")
             {
-                g.DrawString(row.Cells["UserID"].Value.ToString(), fBody, Brushes.Black, 50, y);
-                g.DrawString(row.Cells["FullName"].Value.ToString(), fBody, Brushes.Black, 100, y);
-                g.DrawString(row.Cells["Phone"].Value.ToString(), fBody, Brushes.Black, 350, y);
-                g.DrawString(row.Cells["Balance"].Value.ToString(), fBody, Brushes.Black, 550, y);
-                y += 25;
+                g.DrawString("ID", fHeader, Brushes.Black, 50, y);
+                g.DrawString("ឈ្មោះអតិថិជន", fHeader, Brushes.Black, 100, y);
+                g.DrawString("លេខទូរស័ព្ទ", fHeader, Brushes.Black, 350, y);
+                g.DrawString("សមតុល្យ", fHeader, Brushes.Black, 550, y);
+                y += 30;
+                g.DrawLine(Pens.Black, 50, y, 750, y);
+                y += 10;
+
+                foreach (DataGridViewRow row in dgvCustomers.Rows)
+                {
+                    g.DrawString(row.Cells["UserID"].Value.ToString(), fBody, Brushes.Black, 50, y);
+                    g.DrawString(row.Cells["FullName"].Value.ToString(), fBody, Brushes.Black, 100, y);
+                    g.DrawString(row.Cells["Phone"].Value.ToString(), fBody, Brushes.Black, 350, y);
+                    g.DrawString(row.Cells["Balance"].Value.ToString(), fBody, Brushes.Black, 550, y);
+                    y += 25;
+                }
             }
+
+            else if (role == "Staff")
+            {
+                g.DrawString("ID", fHeader, Brushes.Black, 50, y);
+                g.DrawString("ឈ្មោះអតិថិជន", fHeader, Brushes.Black, 100, y);
+                g.DrawString("លេខទូរស័ព្ទ", fHeader, Brushes.Black, 350, y);
+                g.DrawString("Role", fHeader, Brushes.Black, 550, y);
+                y += 30;
+                g.DrawLine(Pens.Black, 50, y, 750, y);
+                y += 10;
+
+                foreach (DataGridViewRow row in dgvCustomers.Rows)
+                {
+                    g.DrawString(row.Cells["UserID"].Value.ToString(), fBody, Brushes.Black, 50, y);
+                    g.DrawString(row.Cells["FullName"].Value.ToString(), fBody, Brushes.Black, 100, y);
+                    g.DrawString(row.Cells["Phone"].Value.ToString(), fBody, Brushes.Black, 350, y);
+                    g.DrawString(row.Cells["Role"].Value.ToString(), fBody, Brushes.Black, 550, y);
+                    y += 25;
+                }
+            }
+            
         }
 
         private void FormatGrid()

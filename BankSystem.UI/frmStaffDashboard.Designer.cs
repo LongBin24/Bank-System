@@ -32,6 +32,8 @@
             btnViewList = new Button();
             btnLogout = new Button();
             lblWelcome = new Label();
+            staffListBtn = new Button();
+            btnAddStaff = new Button();
             SuspendLayout();
             // 
             // btnAddCustomer
@@ -84,11 +86,39 @@
             lblWelcome.TabIndex = 3;
             lblWelcome.Text = "Welcome";
             // 
+            // staffListBtn
+            // 
+            staffListBtn.BackColor = Color.Gold;
+            staffListBtn.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            staffListBtn.ForeColor = SystemColors.ButtonHighlight;
+            staffListBtn.Location = new Point(281, 365);
+            staffListBtn.Name = "staffListBtn";
+            staffListBtn.Size = new Size(201, 55);
+            staffListBtn.TabIndex = 4;
+            staffListBtn.Text = "ViewStaffList";
+            staffListBtn.UseVisualStyleBackColor = false;
+            staffListBtn.Click += staffListBtn_Click;
+            // 
+            // btnAddStaff
+            // 
+            btnAddStaff.BackColor = SystemColors.MenuHighlight;
+            btnAddStaff.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddStaff.ForeColor = SystemColors.ButtonHighlight;
+            btnAddStaff.Location = new Point(59, 365);
+            btnAddStaff.Name = "btnAddStaff";
+            btnAddStaff.Size = new Size(201, 55);
+            btnAddStaff.TabIndex = 5;
+            btnAddStaff.Text = "AddStaff";
+            btnAddStaff.UseVisualStyleBackColor = false;
+            btnAddStaff.Click += btnAddStaff_Click;
+            // 
             // frmStaffDashboard
             // 
             AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(767, 724);
+            Controls.Add(btnAddStaff);
+            Controls.Add(staffListBtn);
             Controls.Add(lblWelcome);
             Controls.Add(btnLogout);
             Controls.Add(btnViewList);
@@ -108,5 +138,8 @@
         private Button btnViewList;
         private Button btnLogout;
         private Label lblWelcome;
+        private Button staffListBtn;
+        private Button button1;
+        private Button btnAddStaff;
     }
 }
