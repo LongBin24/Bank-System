@@ -76,6 +76,8 @@ namespace BankSystem.UI
         private void btnLogout_Click_1(object sender, EventArgs e)
         {
             this.Close();
+            BankSystem.UI.frmLogin loginForm = new BankSystem.UI.frmLogin();
+            Navigation.SwitchForm(this, loginForm);
         }
 
         private void btnHistory_Click_1(object sender, EventArgs e)

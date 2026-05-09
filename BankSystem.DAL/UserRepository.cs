@@ -144,6 +144,36 @@ namespace BankSystem.DAL
             }
         }
 
+        public bool RegisterStaff(User user)
+        {
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                using (var trans = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        string sqlUser = "INSERT INTO Users (FullName, PIN, Role, Phone) VALUES (@name, @pin, 'Staff', @phone) RETURNING UserID";
+                        int newUserId;
+                        using (var cmd = new NpgsqlCommand(sqlUser, conn))
+                        {
+                            cmd.Parameters.AddWithValue("name", user.FullName);
+                            cmd.Parameters.AddWithValue("pin", user.PIN);
+                            cmd.Parameters.AddWithValue("phone", user.Phone);
+                            newUserId = (int)cmd.ExecuteScalar();
+                        }
+                        trans.Commit();
+                        return true;
+                    }
+                    catch
+                    {
+                        trans.Rollback();
+                        return false;
+                    }
+                }
+            }
+        }
+
 
         public DataTable GetAllCustomers()
         {
@@ -153,6 +183,25 @@ namespace BankSystem.DAL
                 conn.Open();
                 string sql = "SELECT u.UserID, u.FullName, u.Phone, a.AccountID, a.Balance, a.Currency " +
                              "FROM Users u JOIN Accounts a ON u.UserID = a.UserID WHERE u.Role = 'Customer'";
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        dt.Load(reader);
+                    }
+                }
+            }
+            return dt;
+        }
+
+        public DataTable GetAllStaff()
+        {
+            DataTable dt = new DataTable();
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string sql = "SELECT userid, fullname, pin, role, phone, status " +
+                             "FROM Users WHERE Role = 'Staff'";
                 using (var cmd = new NpgsqlCommand(sql, conn))
                 {
                     using (var reader = cmd.ExecuteReader())

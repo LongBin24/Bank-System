@@ -5,11 +5,6 @@ namespace BankSystem.UI
 {
     public partial class frmEditCustomer : Form
     {
-        public frmEditCustomer()
-        {
-            InitializeComponent();
-        }
-
         private void frmEditCustomer_Load(object sender, EventArgs e)
         {
 

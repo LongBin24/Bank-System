@@ -10,7 +10,7 @@ namespace BankSystem.UI
         {
             InitializeComponent();
             _currentStaff = staff;
-            lblWelcome.Text =_currentStaff.FullName;
+            lblWelcome.Text = _currentStaff.FullName;
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
@@ -21,19 +21,30 @@ namespace BankSystem.UI
 
         private void btnViewList_Click(object sender, EventArgs e)
         {
-       
-            frmCustomerList listForm = new frmCustomerList(_currentStaff);
+
+            frmCustomerList listForm = new frmCustomerList(_currentStaff, "Customer");
             Navigation.SwitchForm(this, listForm);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            
             this.Close();
         }
         private void frmStaffDashboard_Load(object sender, EventArgs e)
         {
-                    
+
+        }
+
+        private void staffListBtn_Click(object sender, EventArgs e)
+        {
+            frmCustomerList liststaff = new frmCustomerList(_currentStaff, "Staff");
+            Navigation.SwitchForm(this, liststaff);
+        }
+
+        private void btnAddStaff_Click(object sender, EventArgs e)
+        {
+            frmAddStaff f = new frmAddStaff(_currentStaff);
+            Navigation.SwitchForm(this, f);
         }
     }
 }

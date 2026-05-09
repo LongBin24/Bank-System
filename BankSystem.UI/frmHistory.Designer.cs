@@ -52,7 +52,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvHistory.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvHistory.Location = new Point(12, 134);
+            dgvHistory.Location = new Point(1, 123);
             dgvHistory.Margin = new Padding(6);
             dgvHistory.Name = "dgvHistory";
             dgvHistory.ReadOnly = true;

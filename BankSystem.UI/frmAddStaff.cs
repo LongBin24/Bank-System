@@ -1,14 +1,20 @@
-﻿using System;
+﻿using BankSystem.BLL;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using BankSystem.BLL;   
-using BankSystem.Models;
 
 namespace BankSystem.UI
 {
-    public partial class frmAddCustomer : Form
+    public partial class frmAddStaff : Form
     {
         private BankSystem.Models.User _currentUser;
-        public frmAddCustomer(BankSystem.Models.User user)
+        public frmAddStaff(BankSystem.Models.User user)
         {
             InitializeComponent();
             _currentUser = user;
@@ -26,30 +32,21 @@ namespace BankSystem.UI
 
                 StaffService staff = new StaffService();
 
-                if (decimal.TryParse(txtDeposit.Text, out decimal initialDeposit))
-                {
-                    bool success = staff.CreateNewCustomer(
-                        txtName.Text,
-                        txtPIN.Text,
-                        txtPhone.Text,
-                        initialDeposit,
-                        cbCurrency.Text
-                    );
+                bool success = staff.CreateNewStaff(
+                    txtName.Text,
+                    txtPIN.Text,
+                    txtPhone.Text
+                );
 
                     if (success)
                     {
-                        MessageBox.Show("បង្កើតគណនីអតិថិជនជោគជ័យ!");
+                        MessageBox.Show("បង្កើតជោគជ័យ!");
                         this.Close();
                     }
                     else
                     {
                         MessageBox.Show("ការបង្កើតគណនីបរាជ័យ!");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("សូមបញ្ចូលចំនួនទឹកប្រាក់ជាលេខ!");
-                }
             }
             catch (Exception ex)
             {
@@ -57,20 +54,11 @@ namespace BankSystem.UI
             }
         }
 
-        private void frmAddCustomer_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
-            frmStaffDashboard dashboard = new frmStaffDashboard(_currentUser);
-            Navigation.SwitchForm(this, dashboard);
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            frmStaffDashboard form = new frmStaffDashboard(_currentUser);
+            Navigation.SwitchForm(this, form);
+            this.Close();
         }
     }
 }
