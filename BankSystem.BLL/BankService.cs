@@ -82,5 +82,10 @@ namespace BankSystem.BLL
             }
             return "មានបញ្ហាបច្ចេកទេស!";
         }
+
+        public bool RegisterStaff(User user)
+        {
+            return _userRepo.RegisterStaff(user);
+        }
     }
 }

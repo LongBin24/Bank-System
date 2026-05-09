@@ -2,8 +2,6 @@
 using BankSystem.Models;
 using System.Data;
 using System.Collections.Generic;
-using System.Numerics;
-using System.Xml.Linq;
 
 namespace BankSystem.DAL
 {
@@ -18,7 +16,7 @@ namespace BankSystem.DAL
                 string sql = "SELECT u.UserID, u.FullName, u.Phone, u.Role, a.AccountID, a.Balance, a.Currency " +
                              "FROM Users u " +
                              "LEFT JOIN Accounts a ON u.UserID = a.UserID " +
-                             "WHERE u.UserID = @id AND u.PIN = @pin";   
+                             "WHERE u.UserID = @id AND u.PIN = @pin";
 
                 using (var cmd = new NpgsqlCommand(sql, conn))
                 {
@@ -33,13 +31,31 @@ namespace BankSystem.DAL
                             {
                                 UserID = (int)reader["UserID"],
                                 FullName = reader["FullName"].ToString(),
-                                Role = reader["Role"].ToString()
+                                Role = reader["Role"].ToString(),
+                                Phone = reader["Phone"]?.ToString()
                             };
                         }
                     }
                 }
             }
+
             return null;
+        }
+
+        public bool RegisterStaff(User user)
+        {
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string sqlUser = "INSERT INTO Users (FullName, PIN, Role, Phone) VALUES (@name, @pin, 'Staff', @phone)";
+                using (var cmd = new NpgsqlCommand(sqlUser, conn))
+                {
+                    cmd.Parameters.AddWithValue("name", user.FullName ?? string.Empty);
+                    cmd.Parameters.AddWithValue("pin", user.PIN ?? string.Empty);
+                    cmd.Parameters.AddWithValue("phone", user.Phone ?? string.Empty);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
         }
 
         //Update
