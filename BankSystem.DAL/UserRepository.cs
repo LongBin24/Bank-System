@@ -42,21 +42,21 @@ namespace BankSystem.DAL
             return null;
         }
 
-        public bool RegisterStaff(User user)
-        {
-            using (var conn = DatabaseHelper.GetConnection())
-            {
-                conn.Open();
-                string sqlUser = "INSERT INTO Users (FullName, PIN, Role, Phone) VALUES (@name, @pin, 'Staff', @phone)";
-                using (var cmd = new NpgsqlCommand(sqlUser, conn))
-                {
-                    cmd.Parameters.AddWithValue("name", user.FullName ?? string.Empty);
-                    cmd.Parameters.AddWithValue("pin", user.PIN ?? string.Empty);
-                    cmd.Parameters.AddWithValue("phone", user.Phone ?? string.Empty);
-                    return cmd.ExecuteNonQuery() > 0;
-                }
-            }
-        }
+        //public bool RegisterStaff(User user)
+        //{
+        //    using (var conn = DatabaseHelper.GetConnection())
+        //    {
+        //        conn.Open();
+        //        string sqlUser = "INSERT INTO Users (FullName, PIN, Role, Phone) VALUES (@name, @pin, 'Staff', @phone)";
+        //        using (var cmd = new NpgsqlCommand(sqlUser, conn))
+        //        {
+        //            cmd.Parameters.AddWithValue("name", user.FullName ?? string.Empty);
+        //            cmd.Parameters.AddWithValue("pin", user.PIN ?? string.Empty);
+        //            cmd.Parameters.AddWithValue("phone", user.Phone ?? string.Empty);
+        //            return cmd.ExecuteNonQuery() > 0;
+        //        }
+        //    }
+        //}
 
         //Update
         public bool UpdateCustomer(User user)

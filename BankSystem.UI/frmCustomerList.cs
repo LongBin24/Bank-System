@@ -27,7 +27,7 @@ namespace BankSystem.UI
         {
             try
             {
-                DataTable dt = _staffService.GetCustomerList(role);
+                DataTable dt = _staffService.GetList(role);
 
                 if (dt != null)
                 {

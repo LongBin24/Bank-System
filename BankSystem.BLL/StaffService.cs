@@ -40,7 +40,7 @@ namespace BankSystem.BLL
             return _repo.RegisterStaff(newUser);
         }
         //Read
-        public DataTable GetCustomerList(string role)
+        public DataTable GetList(string role)
         {
             if (role == "Customer")
                 return _repo.GetAllCustomers();
