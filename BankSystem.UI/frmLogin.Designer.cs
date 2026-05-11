@@ -34,6 +34,8 @@
             label2 = new Label();
             txtPIN = new TextBox();
             label3 = new Label();
+            linkLabel1 = new LinkLabel();
+            label4 = new Label();
             SuspendLayout();
             // 
             // btnLogin
@@ -41,7 +43,7 @@
             btnLogin.BackColor = SystemColors.Highlight;
             btnLogin.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = SystemColors.ButtonFace;
-            btnLogin.Location = new Point(349, 377);
+            btnLogin.Location = new Point(349, 331);
             btnLogin.Margin = new Padding(6);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(263, 53);
@@ -97,11 +99,36 @@
             label3.TabIndex = 5;
             label3.Text = "Login";
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLabel1.Location = new Point(581, 422);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(118, 23);
+            linkLabel1.TabIndex = 7;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "បង្កើតគណនីថ្មី";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Cursor = Cursors.Hand;
+            label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(254, 422);
+            label4.Name = "label4";
+            label4.Size = new Size(332, 23);
+            label4.TabIndex = 8;
+            label4.Text = "តើអ្នកបានបង្កើតគណនីចុះឈ្មោះហើយឬនៅ?";
+            // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(896, 638);
+            Controls.Add(label4);
+            Controls.Add(linkLabel1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(txtPIN);
@@ -125,5 +152,7 @@
         private Label label2;
         private TextBox txtPIN;
         private Label label3;
+        private LinkLabel linkLabel1;
+        private Label label4;
     }
 }

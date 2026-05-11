@@ -27,8 +27,7 @@ namespace BankSystem.UI
         {
             try
             {
-                DataTable dt = _staffService.GetCustomerList(role);
-
+                DataTable dt = _staffService.GetUserList(role);
                 if (dt != null)
                 {
                     dgvCustomers.DataSource = dt;
