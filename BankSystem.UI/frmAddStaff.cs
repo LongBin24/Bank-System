@@ -29,6 +29,11 @@ namespace BankSystem.UI
                     MessageBox.Show("សូមបំពេញឈ្មោះ និងលេខសម្ងាត់!");
                     return;
                 }
+                if (txtPIN.Text != txtConfirmPIN.Text)
+                {
+                    MessageBox.Show("លេខសម្ងាត់មិនត្រូវគ្នាទេ!");
+                    return;
+                }
 
                 StaffService staff = new StaffService();
 
@@ -38,15 +43,15 @@ namespace BankSystem.UI
                     txtPhone.Text
                 );
 
-                    if (success)
-                    {
-                        MessageBox.Show("បង្កើតជោគជ័យ!");
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("ការបង្កើតគណនីបរាជ័យ!");
-                    }
+                if (success)
+                {
+                    MessageBox.Show("បន្ថែមបុគ្គលិកថ្មីជោគជ័យ!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("មានបញ្ហា មិនអាចបន្ថែមបានឡើយ!!");
+                }
             }
             catch (Exception ex)
             {
@@ -58,7 +63,6 @@ namespace BankSystem.UI
         {
             frmStaffDashboard form = new frmStaffDashboard(_currentUser);
             Navigation.SwitchForm(this, form);
-            this.Close();
         }
     }
 }

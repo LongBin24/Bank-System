@@ -52,14 +52,16 @@ namespace BankSystem.DAL
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
+
                 string hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.PIN);
 
-                string sqlUser = "INSERT INTO Users (FullName, PIN, Role, Phone) VALUES (@name, @pin, 'Staff', @phone)";
-                using (var cmd = new NpgsqlCommand(sqlUser, conn))
+                string sql = "INSERT INTO Users (FullName, PIN, Role, Phone) VALUES (@name, @pin, 'Staff', @phone)";
+                using (var cmd = new NpgsqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("name", user.FullName ?? string.Empty);
+                    cmd.Parameters.AddWithValue("name", user.FullName);
                     cmd.Parameters.AddWithValue("pin", hashedPassword);
-                    cmd.Parameters.AddWithValue("phone", user.Phone ?? string.Empty);
+                    cmd.Parameters.AddWithValue("phone", user.Phone ?? (object)DBNull.Value);
+
                     return cmd.ExecuteNonQuery() > 0;
                 }
             }
@@ -125,7 +127,7 @@ namespace BankSystem.DAL
                         string hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.PIN);
 
                         string sqlUser = "INSERT INTO Users (FullName, PIN, Role, Phone, TelegramChatID) " +
-                                         "VALUES (@name, @pin, 'Customer', @phone, @tgid) RETURNING UserID";
+                     "VALUES (@name, @pin, 'Customer', @phone, @tgid) RETURNING UserID";
 
                         int newUserId;
                         using (var cmd = new NpgsqlCommand(sqlUser, conn))
@@ -236,5 +238,39 @@ namespace BankSystem.DAL
         //        }
         //    }
         //}
+        
+
+        //Udate Staff
+        public bool UpdateStaff(User staff)
+        {
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string sql = "UPDATE Users SET FullName = @name, Phone = @phone WHERE UserID = @id AND Role = 'Staff'";
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("name", staff.FullName);
+                    cmd.Parameters.AddWithValue("phone", staff.Phone);
+                    cmd.Parameters.AddWithValue("id", staff.UserID);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+        //Delete Staff
+        public bool DeleteStaff(int staffId)
+        {
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string sql = "DELETE FROM Users WHERE UserID = @id AND Role = 'Staff'";
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("id", staffId);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
     }
 }

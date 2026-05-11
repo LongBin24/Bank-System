@@ -24,7 +24,7 @@ namespace BankSystem.BLL
         {
             return _repo.UpdateCustomer(user);
         }
-        //Create
+        //Create​ New Customer
         public bool CreateNewCustomer(string name, string pin, string phone, decimal deposit, string currency)
         {
             if (string.IsNullOrEmpty(name) || deposit < 0) return false;
@@ -32,12 +32,20 @@ namespace BankSystem.BLL
             User newUser = new User { FullName = name, PIN = pin, Phone = phone };
             return _repo.RegisterCustomer(newUser, deposit, currency);
         }
+        //Create New Staff
         public  bool CreateNewStaff(string name, string pin, string phone)
         {
-            if (string.IsNullOrEmpty(name)) return false;
+            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(pin)) return false;
 
-            User newUser = new User { FullName = name, PIN = pin, Phone = phone };
-            return _repo.RegisterStaff(newUser);
+            User newStaff = new User
+            {
+                FullName = name,
+                PIN = pin,
+                Phone = phone,
+                Role = "Staff" 
+            };
+
+            return _repo.RegisterStaff(newStaff);
         }
      
         public DataTable GetUserList(string role)
@@ -48,6 +56,14 @@ namespace BankSystem.BLL
                 return _repo.GetAllStaff();     
 
             return new DataTable();
+        }
+
+
+        public bool UpdateStaffInfo(User staff) => _repo.UpdateStaff(staff);
+
+        public bool RemoveStaff(int id)
+        {
+            return _repo.DeleteStaff(id);
         }
     }
 }

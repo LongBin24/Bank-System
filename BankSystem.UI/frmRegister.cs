@@ -91,5 +91,11 @@ namespace BankSystem.UI
         {
 
         }
+
+        private void btnback_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            Navigation.SwitchForm(this, login);
+        }
     }
 }

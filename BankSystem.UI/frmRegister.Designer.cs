@@ -43,6 +43,7 @@
             button1 = new Button();
             btnLinkTelegram = new Button();
             txtTelegramID = new TextBox();
+            btnback = new Button();
             SuspendLayout();
             // 
             // txtName
@@ -172,11 +173,22 @@
             txtTelegramID.Size = new Size(319, 43);
             txtTelegramID.TabIndex = 14;
             // 
+            // btnback
+            // 
+            btnback.Location = new Point(99, 60);
+            btnback.Name = "btnback";
+            btnback.Size = new Size(185, 46);
+            btnback.TabIndex = 15;
+            btnback.Text = "ត្រឡប់ក្រោយ";
+            btnback.UseVisualStyleBackColor = true;
+            btnback.Click += btnback_Click;
+            // 
             // frmRegister
             // 
             AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1422, 977);
+            Controls.Add(btnback);
             Controls.Add(txtTelegramID);
             Controls.Add(btnLinkTelegram);
             Controls.Add(button1);
@@ -218,5 +230,6 @@
         private Button button1;
         private Button btnLinkTelegram;
         private TextBox txtTelegramID;
+        private Button btnback;
     }
 }
