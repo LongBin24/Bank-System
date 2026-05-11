@@ -30,6 +30,8 @@ namespace BankSystem.UI
                 if (result == "Success")
                 {
                     MessageBox.Show("ដាក់ប្រាក់ជោគជ័យ!");
+                    frmCustomerDashboard c = new frmCustomerDashboard(_user);
+                    Navigation.SwitchForm(this, c);
                     this.Close();
                 }
                 else
