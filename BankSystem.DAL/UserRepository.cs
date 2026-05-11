@@ -65,6 +65,53 @@ namespace BankSystem.DAL
             }
         }
 
+        //Update
+        public bool UpdateCustomer(User user)
+        {
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+             
+                string sqlUpdate = "UPDATE Users SET FullName = @name, Phone = @phone WHERE UserID = @id";
+                using (var cmd = new NpgsqlCommand(sqlUpdate, conn))
+                {
+                    cmd.Parameters.AddWithValue("name", user.FullName);
+                    cmd.Parameters.AddWithValue("phone", user.Phone);
+                    cmd.Parameters.AddWithValue("id", user.UserID);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+        //Delete
+        public bool DeleteCustomer(int userId)
+        {
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                String sqlDelete = "DELETE FROM Users WHERE UserID = @id";
+                using (var cmd = new NpgsqlCommand(sqlDelete, conn))
+                {
+                    cmd.Parameters.AddWithValue("id", userId);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+        public string GetNameByAccountId(int accountId)
+        {
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string sql = "SELECT u.FullName FROM Users u JOIN Accounts a ON u.UserID = a.UserID WHERE a.AccountID = @aid";
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("aid", accountId);
+                    object result = cmd.ExecuteScalar();
+                    return result?.ToString() ?? "Unknown";
+                }
+            }
+        }   
+
         public bool RegisterCustomer(User user, decimal initialDeposit, string currency)
         {
             using (var conn = DatabaseHelper.GetConnection())

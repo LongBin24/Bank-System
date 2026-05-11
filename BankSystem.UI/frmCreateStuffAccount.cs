@@ -16,14 +16,10 @@ namespace BankSystem.UI
     {
         private User _currentUser;
 
-        public frmCreateStuffAccount()
+        public frmCreateStuffAccount(BankSystem.Models.User User)
         {
             InitializeComponent();
-        }
-
-        public frmCreateStuffAccount(User currentUser) : this()
-        {
-            _currentUser = currentUser;
+            _currentUser = User;
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
