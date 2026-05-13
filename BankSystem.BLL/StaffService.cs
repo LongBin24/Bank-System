@@ -32,19 +32,22 @@ namespace BankSystem.BLL
             User newUser = new User { FullName = name, PIN = pin, Phone = phone };
             return _repo.RegisterCustomer(newUser, deposit, currency);
         }
-        public bool CreateNewStaff(string name, string pin, string phone)
+        public  bool CreateNewStaff(string name, string pin, string phone)
         {
             if (string.IsNullOrEmpty(name)) return false;
 
             User newUser = new User { FullName = name, PIN = pin, Phone = phone };
             return _repo.RegisterStaff(newUser);
         }
-        //Read
-        public DataTable GetList(string role)
+     
+        public DataTable GetUserList(string role)
         {
             if (role == "Customer")
                 return _repo.GetAllCustomers();
-            return _repo.GetAllStaff();
+            else if (role == "Staff")
+                return _repo.GetAllStaff();     
+
+            return new DataTable();
         }
     }
 }

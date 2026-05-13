@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
+    <PackageReference Include="Telegram.Bot" Version="22.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BankSystem.BLL\BankSystem.BLL.csproj" />
     <ProjectReference Include="..\BankSystem.Models\BankSystem.Models.csproj" />
   </ItemGroup>

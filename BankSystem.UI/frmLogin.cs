@@ -1,5 +1,8 @@
 ﻿using BankSystem.BLL;
 using BankSystem.Models;
+using Telegram.Bot;
+using System.Linq;
+using System.Threading.Tasks;
 
 
 namespace BankSystem.UI
@@ -11,35 +14,21 @@ namespace BankSystem.UI
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
             AuthService auth = new AuthService();
             BankSystem.Models.User user = auth.Authenticate(txtUserID.Text, txtPIN.Text);
 
             if (user != null)
             {
-                if (user.Role == "Staff")
-                {
-                    BankSystem.UI.frmStaffDashboard dashboard = new BankSystem.UI.frmStaffDashboard(user);
 
-                    this.Hide();
+                string otpCode = new Random().Next(100000, 999999).ToString();
 
-                    dashboard.Show();
-                }
-                else if (user.Role == "Customer")
-                {
-                    if (user.Role == "Staff")
-                    {
-                        frmStaffDashboard staffDash = new frmStaffDashboard(user);
-                        Navigation.SwitchForm(this, staffDash);
-                    }
-                    else if (user.Role == "Customer")
-                    {
+                TelegramService telegram = new TelegramService();
+                await telegram.SendOtpAsync(user.TelegramChatID, otpCode);
 
-                        frmCustomerDashboard custDash = new frmCustomerDashboard(user);
-                        Navigation.SwitchForm(this, custDash);
-                    }
-                }
+                frmOtpVerify otpForm = new frmOtpVerify(user, otpCode);
+                Navigation.SwitchForm(this, otpForm);
             }
             else
             {
@@ -50,6 +39,17 @@ namespace BankSystem.UI
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmRegister registerForm = new frmRegister();
+            Navigation.SwitchForm(this, registerForm);
         }
     }
 }

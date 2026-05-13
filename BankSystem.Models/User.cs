@@ -7,5 +7,6 @@
         public string? PIN { get; set; }
         public string? Role { get; set; } 
         public string? Phone { get; set; }
+        public string? TelegramChatID { get; set; }
     }
 }
