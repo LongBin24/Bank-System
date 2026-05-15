@@ -10,6 +10,7 @@ namespace BankSystem.UI
     public partial class frmTransfer : Form
     {
         private BankSystem.Models.User _sender;
+        private BankSystem.Models.Account _acc;
         private TransferReceipt currentReceipt;
         private int currentRefNo = 0;
 
@@ -17,6 +18,8 @@ namespace BankSystem.UI
         {
             InitializeComponent();
             _sender = user;
+            BankService bank = new BankService();
+            _acc = bank.GetAccountByUserId(_sender.UserID);
         }
 
         private void btnTransfer_Click(object sender, EventArgs e)
@@ -25,7 +28,7 @@ namespace BankSystem.UI
             {
                 BankService bank = new BankService();
 
-                currentReceipt = bank.ProcessTransfer(_sender.UserID, rid, amt);
+                currentReceipt = bank.ProcessTransfer(_acc.AccountID, rid, amt);
 
                 if (currentReceipt != null)
                 {
